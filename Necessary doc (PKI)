@@ -1,0 +1,51 @@
+Command to get SSA1 key and SSA12 key
+
+linux:
+
+keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+
+Windows:
+
+keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+
+Video link:
+https://www.youtube.com/watch?v=a7UQPYiApzw
+
+
+
+83:6E:35:FA:9A:27:E1:AE:76:52:31:3B:1F:6D:D5:F7:A6:ED:00:37
+83:6E:35:FA:9A:27:E1:AE:76:52:31:3B:1F:6D:D5:F7:A6:ED:00:37
+
+
+Emulator path: " ~/Library/Android/sdk/emulator" Emulator path Windows: "C:\Users\{username}\AppData\Local\Android\Sdk\emulator" (use your pc username)
+
+ firebase_auth: ^5.1.1
+ firebase_core: ^3.1.1
+ cloud_firestore: ^5.0.2
+
+
+
+video link: https://www.youtube.com/watch?v=6Vc_E20o5wE
+root level gurdle
+buildscript {
+ext.kotlin_version = '1.7.10'
+repositories {
+google()
+mavenCentral()
+}
+dependencies { 
+classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+classpath 'com.google.gms:google-services:4.3.15'
+}
+}
+
+// firebse initialization 
+WidgetsFlutterBinding.ensureInitialized(); 
+await Firebase.initializeApp();
+
+flutterfire doesnot work:(linux/mac)
+dart pub global activate flutterfire_cli  
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+curl -sL https://firebase.tools | bash  
+firebase login
+flutterfire configure
